@@ -1,45 +1,143 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Startup Landing Page</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<!-- 
+Beth Holway
+5/30/15
+EM207 Section CS13-01
+Final Project
+-------------
+Home Page
+Page 1 - Gardening
+Page 2 - Hiking
+Page 3 - Food
+Page 4 - Geeky Stuff
 
-    <!-- Bootstrap CSS from a CDN. This way you don't have to include the bootstrap file yourself -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ -->
+<head>
 
-    <!-- Your own stylesheet -->
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-    <header class="startup text-center text-white d-flex">
-    <div class="container my-auto">
+	<title>Final Project - Holway</title>
+	<link rel="stylesheet" href="FP.css">
+	
+	<script>
+	function ShowAlertMail()
+	{
+		alert("May not work if emailer is not in place!");
+	}
+	</script>
+	<style>
+	canvas
+	{
+		border: 3px solid #6E7964;
+	}
+	
+	.music
+	{
+		border: 3px solid black;
+	}
+	</style>
+</head>
 
-        <!-- Begin Mailchimp Signup Form -->
-        <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
-        <style type="text/css">
-          #mc_embed_signup{ clear:left; font:14px Helvetica,Arial,sans-serif; }
-          /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-             We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-        </style>
-        <div id="mc_embed_signup">
-        <form action="https://coolwebsite.us19.list-manage.com/subscribe/post?u=66e32754613f297e7b8ea33ac&amp;id=7affd99e16" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <div id="mc_embed_signup_scroll">
-        
-            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_66e32754613f297e7b8ea33ac_7affd99e16" tabindex="-1" value=""></div>
-            <div class="clear"><input class="btn btn-primary btn-xl" type="submit" value="Find Out More" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-            </div>
-        </form>
-        </div>
+<body>
+<h2><a href="FPHome.html" style = "text-decoration: none">Home</a>
+   |  <a href="FPPage1.html" target="_blank" style = "text-decoration: none">Gardening</a>
+   |  <a href="FPPage2.html" target="_blank" style = "text-decoration: none">Hiking</a>
+   |  <a href="FPPage3.html" target="_blank" style = "text-decoration: none">Food</a>
+   |  <a href="FPPage4.html" target="_blank" style = "text-decoration: none">Geeky Stuff</a></h2>
+<hr style = "height:12px; background-color: #6E7964; border-color: #000000; border-size: 2px;">
 
-        <!--End mc_embed_signup-->
-		</div>
+<canvas id="theHeadCanvas" width= "800" height= "200"></canvas>
+<script>
+var Cnvas = document.getElementById("theHeadCanvas");
+var HeadCnvasCntx = Cnvas.getContext('2d');
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</header>
-  </body>
+/* Lines to Frame Logo */ 
+
+HeadCnvasCntx.strokeStyle = '#531C53';
+HeadCnvasCntx.lineWidth = '15';
+HeadCnvasCntx.beginPath();
+HeadCnvasCntx.moveTo(5,23);
+HeadCnvasCntx.lineTo(215,23);
+HeadCnvasCntx.stroke();
+HeadCnvasCntx.beginPath();
+HeadCnvasCntx.moveTo(5,15);
+HeadCnvasCntx.lineTo(5,190);
+HeadCnvasCntx.stroke();
+
+/* Image in canvas */
+var Pic = new Image();
+Pic.src = "Logos/esmtree.jpg";
+Pic.onload = function()
+{
+	HeadCnvasCntx.drawImage(Pic, 10, 25);
+}
+
+
+/* Heading Text */
+HeadCnvasCntx.lineWidth = '4';
+HeadCnvasCntx.font = 'italic bold 80px "lucida"';
+HeadCnvasCntx.fillStyle = '#8A2E8A';
+HeadCnvasCntx.strokeStyle = '#531C53';
+HeadCnvasCntx.fillText("Let's", 250, 60);
+HeadCnvasCntx.strokeText("Let's", 250, 60);
+HeadCnvasCntx.fillText("Talk", 325, 120);
+HeadCnvasCntx.strokeText("Talk", 325, 120);
+HeadCnvasCntx.fillText("About...", 400, 180);
+HeadCnvasCntx.strokeText("About...", 400, 180);
+
+</script>
+<hr style = "height:8px; background-color: #6E7964">
+
+<hr style = "height:8px; width: 80%; background-color: #6E7964">
+<hr  class = "style-seven" class = "style-seven:before">
+<a href="#bottom" id="top">To play music, click here to go to the bottom of the page...</a>
+<hr class = "style-seven" class = "style-seven:before">
+
+<form method = "post" action = "mailto:elizabeth.holway@my.cs.coloradotech.edu"
+ enctype = "multipart/form-data" >
+<fieldset style= "background-color: #CDD9C1; text-align: left"> 
+<legend = "center"><b>Would you like to be notified of updates via email?</b></legend>
+<input type = "radio" name = "updates" value = "Yes" onclick="ShowAlertMail();">Yes<br>
+<label>
+&nbsp &nbsp &nbsp &nbsp Name:     <input type="text" name= "name" size = "40" maxlength = "40"> <br>
+&nbsp &nbsp &nbsp &nbsp Email:    <input type="email" name="emailaddress" size = "40" 
+maxlength = "40">
+</label><br>
+<input type = "radio" name = "updates" value = "No">No<br>
+
+<textarea name="comments" rows="5" cols="50" wrap="hard"> Comments... &#10 This is a facade to serve as an example... &#10 No emails will be captured here! </textarea><br>
+<br>
+<input type = "submit" value = "Submit" />
+<input type = "reset" value = "Reset" />
+</fieldset></form>
+
+<hr style = "height:8px; width: 80%; background-color: #6E7964">
+
+<hr  class = "style-seven" class = "style-seven:before">
+<p>
+<h3><b>What's New?</b></h3>
+<ul>
+<li>Save water with hanging plants, <a href="FPPage1.html" target="_blank">Gardening Page</a></li>
+<li>The water level in a stream near Barr Trail, <a href="FPPage2.html" target="_blank">Hiking Page</a></li>
+<li>A link to a great lecture about sugar, <a href="FPPage3.html" target="_blank">Food Page</a></li>
+<li>Star Wars trailer plus a spoof trailer, <a href="FPPage4.html" target="_blank">Geeky Stuff Page</a></li>
+</ul>
+</p>
+<hr class = "style-seven" class = "style-seven:before">
+<br>
+<img src= "Images/elteneleven.jpeg" class= "music"></img>
+<audio src= "Music/myonlyswerving.m4a" controls ></audio><br>
+<caption><b>My Only Swerving</b> by El Ten Eleven</caption>
+<br><br>
+<img src= "Images/weathertunes.jpeg" class= "music"></img>
+<audio src= "Music/afterdawn.m4a" controls ></audio><br>
+<caption> <b>After Dawn</b> by Weathertunes<caption>
+<br>
+<hr class = "style-seven" class = "style-seven:before">
+<a href="#top" id="bottom">Go back to the top...</a>
+<hr class = "style-seven" class = "style-seven:before">
+<hr style = "height:8px; width: 80%; background-color: #6E7964"  >
+<br>
+<br>
+
+</body>
 </html>
